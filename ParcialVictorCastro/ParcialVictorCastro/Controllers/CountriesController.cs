@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using ParcialVictorCastro.Models;
@@ -17,12 +13,14 @@ namespace ParcialVictorCastro.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/Countries
+        [Authorize]
         public IQueryable<Country> GetCountries()
         {
             return db.Countries;
         }
 
         // GET: api/Countries/5
+        [Authorize]
         [ResponseType(typeof(Country))]
         public IHttpActionResult GetCountry(string id)
         {
@@ -36,6 +34,7 @@ namespace ParcialVictorCastro.Controllers
         }
 
         // PUT: api/Countries/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutCountry(string id, Country country)
         {
@@ -71,6 +70,7 @@ namespace ParcialVictorCastro.Controllers
         }
 
         // POST: api/Countries
+        [Authorize]
         [ResponseType(typeof(Country))]
         public IHttpActionResult PostCountry(Country country)
         {
@@ -101,6 +101,7 @@ namespace ParcialVictorCastro.Controllers
         }
 
         // DELETE: api/Countries/5
+        [Authorize]
         [ResponseType(typeof(Country))]
         public IHttpActionResult DeleteCountry(string id)
         {

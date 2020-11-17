@@ -14,7 +14,7 @@ namespace ParcialVictorCastro.Models
      [StringLength(50)]
      public string Name { get; set; }
 
-     [Range(1,99999)]
+     [Range(1,9999999)]
      public int Area { get; set; }
 
      [Range(1, 9999)]
@@ -23,7 +23,7 @@ namespace ParcialVictorCastro.Models
      [StringLength(50)]
      public string languages { get; set; }
 
-    [StringLength(50)]
+    [StringLength(9999)]
     public string flag { get; set; }
 
 
